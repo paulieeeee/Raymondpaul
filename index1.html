@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    /* ===== NAVBAR ===== */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        padding: 15px 0;
+    }
+
+    .navbar .logo {
+        display: none;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .nav-links a:hover {
+        color: lightgray;
+    }
+
+    .nav-links a.active {
+        border-bottom: 3px solid white;
+        padding-bottom: 5px;
+    }
+
+    /* ===== HOME SECTION ===== */
+    .hero {
+        height: 100vh;
+        width: 100%;
+        background-image: url('BR.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1;
+    }
+
+    .profile-img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        border: 4px solid white;
+        object-fit: cover;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content {
+        text-align: center;
+        color: white;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 5px black;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #333;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-card {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(0,0,0,0.65);
+        padding: 30px;
+        border-radius: 15px;
+        color: white;
+        text-align: justify;
+        line-height: 2.0;
+    }
+
+    .about-card h2 {
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+        margin-bottom: 20px;
+    }
+
+    .about-section {
+        background-image: url('fam.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 60px 20px;
+        border-radius: 10px;
+    }
+
+    /* ===== PROJECTS SECTION ===== */
+    .projects {
+        background-image: url('BR.jpg'); 
+        background-size: cover;
+        background-position: center;
+        padding: 60px 20px;
+        border-radius: 10px;
+    }
+
+    .project-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .project-card {
+        margin-bottom: 20px;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-bg {
+        background-image: url('BR.jpg'); 
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        padding: 80px 20px;
+        border-radius: 10px;
+    }
+
+    .contact-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.55);
+        z-index: 1;
+    }
+
+    .contact-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px; /* uniform width */
+        margin: 0 auto;
+        color: white;
+        text-align: center;
+    }
+
+    .contact-content h2 {
+        font-size: 36px;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 5px black;
+    }
+
+    .contact-content h3 {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 3px black;
+    }
+
+    .contact-content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        display:flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 40px; 
+        margin-bottom: 40px;
+    }
+
+    .contact-info div {
+        flex: 1 1 200px; /* uniform size for each contact item */
+        max-width: 250px;
+    }
+
+    .contact-info a:hover {
+        color: #ffd700;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        width: 100%; /* uniform width */
+    }
+
+    .contact-form button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #fff;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%; /* uniform width */
+    }
+
+    .contact-form button:hover {
+        background: #ffd700;
+        color: #000;
+    }
+
+    iframe {
+        border: 0;
+        width: 100%;
+        height: 350px; /* slightly smaller map */
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        margin-top: 20px;
+    }
+
+    /* Hide sections by default */
+    #home, #about, #projects, #contact {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="javascript:void(0)" onclick="showSection('home')">Home</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('about')">About</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('projects')">Projects</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>MY PORTFOLIO</h1>
+        <img src="paul cutie.jpg" alt="Profile Picture" class="profile-img">
+        <p>Hello! I'm Jhon Paul P. Leonin, an 18-year-old IT student from OMSC San Jose Campus.</p>
+        <p>I am passionate about web development, technology, and creating meaningful projects.</p>
+        <p>Explore my work below and learn more about me!</p>
+        <a href="javascript:void(0)" onclick="showSection('projects')" class="btn">View My Work</a>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="about-card">
+        <h2>About Me</h2>
+        <p>
+        Hello! My name is <b>Raymond Paul Geneza</b>, an <b>23-year-old IT student</b> born on <b>April 26, 2002</b> in <b>Guam</b>. I grew up in the peaceful and humble community of <b>Santa Cruz, Occidental Mindoro</b>, where I learned the importance of respect, simplicity, and hard work. Today, I proudly study at <b>OMSC – San Jose Campus</b>, where I continue to nurture my passion for technology, web development, and lifelong learning. I believe that every small step I take brings me closer to becoming the best version of myself.
+
+        <br><br>
+
+        I am blessed with a loving and hardworking family who constantly inspires me. My mother, <b>Esther P. Leonin</b>, works as a <b>housekeeper</b>, and through her dedication, she showed me the true meaning of patience, humility, and inner strength. My father, <b>Francisco Y. Leonin Jr.</b>, is a <b>farmer</b> whose unwavering perseverance taught me discipline, responsibility, and the value of earning through honest work. My brothers, <b>Jaxith Pierre</b> and <b>Marc Justin Leonin</b>, continuously motivate me to dream bigger and to push myself beyond my limits. Everything I hope to achieve in life is inspired by the sacrifices, guidance, and love of the people I call family.
+
+        <br><br>
+
+        I enjoy many activities that help me grow creatively and personally, such as <b>driving, singing, biking, photography, and traveling to new places</b>. These experiences allow me to discover different perspectives and appreciate the beauty of both simple and unforgettable moments. I also love exploring food, especially <b>shawarma, french fries, pizza, and milk tea</b>. The <b>beach</b> is my favorite place to relax and think, as its calm waves remind me that life continues to move forward no matter what challenges come my way. My love for <b>black and white</b> colors reflects my personality clean, simple, calm, and timeless.
+
+        <br><br>
+
+        As a young student with big dreams, I believe that challenges are opportunities for growth. I value <b>respect, humility, discipline, leadership, and continuous self-improvement</b>. My long-term goal is to become a <b>skilled programmer</b> specializing in web development and software engineering. I want to create digital solutions that help people, solve real-world problems, and inspire others to explore the world of technology. Beyond my passion for IT, I also dream of serving my community as a <b>dedicated police officer</b>, driven by a deep desire to protect others and make my hometown a safer place.
+
+        <br><br>
+
+        I know that the journey ahead will not always be easy, but I believe in the power of determination, hard work, and faith. Every day, I strive to learn new things, improve my skills, and grow not just as a student but as a person with purpose. I carry with me the values I learned from my family and the lessons I gained from my hometown. I aim to build a future where my character, dedication, and talents create a positive impact on other people. With hope in my heart and determination in my mind, I continue to move forward, ready to embrace every challenge and opportunity that comes my way.
+        </p>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-list">
+        <div class="project-card">
+            <img src="gg.jpg" alt="Story Project">
+            <h3>Short Story Website</h3>
+            <p>A simple webpage that showcases my creative writing story.</p>
+            <a href="akii.html" class="btn">View Story</a>
+        </div>
+        <div class="project-card">
+            <img src="vv.jpg" alt="Recipe Project">
+            <h3>Recipe Website</h3>
+            <p>A simple recipe site showcasing delicious pork adobo with ingredients and instructions.</p>
+            <a href="karekare.html" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <img src="ee.jpg" alt="Paulpastil Project">
+            <h3>Ordered Form Website</h3>
+            <p>Website guides users to easily order Paulpastil online.</p>
+            <a href="PIZZA.html" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <img src="med.jpg" alt="Convertion Project">
+            <h3>Convertion Website</h3>
+            <p>A project that improves portfolio design with modern UI/UX features.</p>
+            <a href="shoesizes.html" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <img src="B.jpg" alt="CSS">
+            <h3>Bicycle Website</h3>
+            <p>A project Bicycle.</p>
+            <a href="CSS.html" class="btn">View Project</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="contact-bg">
+        <div class="contact-content">
+            <h2>Contact Me</h2>
+            <p>I'd love to hear from you! Reach out via the methods below or send me a message directly.</p>
+
+            <div class="contact-info">
+                <div>
+                    <span style="font-size:24px;">📞</span>
+                    <a href="tel:09622434564">09622434564</a>
+                </div>
+                <div>
+                    <span style="font-size:24px;">✉️</span>
+                    <a href="mailto:runningdemigod@gmail.com">runningdemigod@gmail.com</a>
+                </div>
+                <div>
+                    <span style="font-size:24px;">🌐</span>
+                    <a href="https://facebook.com/" target="_blank">Monti</a>
+                </div>
+            </div>
+
+            <h3>Send Me a Message</h3>
+            <form action="mailto:runningdemigod@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <h3>Find Me on the Map</h3>
+            <p>Visit my location in <b>Mulawin, Santa Cruz, Occidental Mindoro</b>:</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.092748450113!2d120.51535801513102!3d13.24218179060325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b2ee87ee2f7a37%3A0xc2b33f229ea91449!2sMulawin%2C%20Santa%20Cruz%2C%20Occidental%20Mindoro!5e0!3m2!1sen!2sph!4v1708795300000!5m2!1sen!2sph" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Jhon Paul P. Leonin. All rights reserved.</p>
+</footer>
+
+<script>
+var lastSection = "home";
+
+document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash.replace("#", "");
+    if(hash && document.getElementById(hash)){
+        showSection(hash, false);
+    } else {
+        showSection("home", false);
+    }
+});
+
+function showSection(section, pushState = true) {
+    var home = document.getElementById("home");
+    var about = document.getElementById("about");
+    var projects = document.getElementById("projects");
+    var contact = document.getElementById("contact");
+
+    home.style.display = "none";
+    about.style.display = "none";
+    projects.style.display = "none";
+    contact.style.display = "none";
+
+    var active = document.getElementById(section);
+    if(section === "home"){
+        active.style.display = "flex";
+    } else {
+        active.style.display = "block";
+    }
+
+    lastSection = section;
+    setActiveLink(section);
+
+    if(pushState){
+        history.pushState({section: section}, "", "#" + section);
+    }
+}
+
+function setActiveLink(section){
+    var links = document.querySelectorAll(".nav-links a");
+    links.forEach(link => {
+        link.classList.remove("active");
+        if(link.getAttribute("onclick").includes(section)){
+            link.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("popstate", function(event){
+    if(event.state && event.state.section){
+        showSection(event.state.section, false);
+    } else {
+        showSection("home", false);
+    }
+});
+</script>
+
+</body>
+</html>
+
