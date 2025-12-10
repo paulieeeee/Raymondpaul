@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - Portfolio</title>
+<style>
+body {
+    margin: 0;
+    font-family: Orator Std, sans-serif;
+    background-color: #000;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Container with fade-in */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(50,50,50,0.6);
+    border-radius: 12px;
+    border: 2px solid #555;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Headings */
+h2 {
+    color: #eee;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 28px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    opacity: 0;
+    animation: fadeInText 1.5s 0.3s forwards;
+}
+
+/* Profile Image */
+img.profile-pic {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 2px solid #777;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeInText 1.5s 0.6s forwards;
+}
+img.profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #aaa;
+}
+
+/* Paragraphs */
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInText 1.5s 0.9s forwards;
+}
+
+/* Contact links */
+a.contact-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a.contact-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #aaa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <b><h2>Hi There!</b></h2>
+    <img src="paul cutie.jpg" alt="Profile Picture" class="profile-pic">
+    <p>My name is <b>Raymond Paul Geneza</b>, 23 stunning. A student of <b><u>Occidental Mindoro State College</b></u>. Currently taking Bachelor of Science in Information Technology.</p>
+	<p>I love to write my own stories— fiction and non fiction. I also play games such as Call of Duty: Mobile, and Bloodstrike.</p>
+    <b><h2>If you need something :) </b></h2>
+    <p>My Email: <a href="mailto:runningdemigod@gmail.com" class="contact-link">runningdemigod@gmail.com</a></p>
+    <p>My Phone: <a href="tel:09665289564" class="contact-link">0966-528-9564</a></p>
+    <p>My Address: Doña Consuelo Subdivision, San Jose, Occidental Mindoro</p>
+</div>
+
+</body>
+</html>

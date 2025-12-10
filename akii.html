@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story in the Book</title>
+<style>
+    /* Body styles with centered background */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Ink Free', sans-serif;
+        background-image: url('akii.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #3b1f0b; /* brownish text */
+        line-height: 1.6;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        animation: fadeIn 2s ease forwards;
+    }
+
+    /* Container for content with semi-transparent overlay */
+    .container {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 30px;
+        margin: 40px;
+        border-radius: 12px;
+        max-width: 800px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        animation: fadeInUp 2s ease forwards;
+    }
+
+    h1 {
+        color: brown;
+        text-align: center;
+        margin-bottom: 10px;
+        animation: fadeIn 1.5s ease forwards;
+    }
+
+    h2 {
+        margin-top: 20px;
+        animation: fadeIn 1.8s ease forwards;
+    }
+
+    p {
+        font-size: 20px;
+        margin-bottom: 20px;
+        animation: fadeIn 2s ease forwards;
+    }
+
+    img {
+        display: block;
+        margin: 20px auto;
+        border-radius: 12px;
+        animation: fadeIn 2.5s ease forwards;
+    }
+
+    hr {
+        border: 1px solid #3b1f0b;
+        margin: 20px 0;
+        animation: fadeIn 1.5s ease forwards;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Story in the Book</h1>
+    <hr>
+    <h2>Chapter 1</h2>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Molly had been staring out of her window for about an hour now. On her desk, lying between the copies of 
+    <i>Nature</i>, <i>New Scientist</i>, and all other scientific journals her work had appeared in, was a well-thumbed copy of <cite>On The Road</cite>. 
+    It had been Molly's favourite book since college, and the longer she spent in these four walls, the more she felt she needed to be free.</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;She had spent the last ten years in this room, sitting under a poster with an Oscar Wilde quote proclaiming that 
+    <q>Work is the refuge of people who having nothing to do</q>. Although many considered her pioneering work, unraveling secrets of llama 
+    <abbr title="Deoxyribonucleic acid">DNA</abbr>, to be an outstanding achievement, Molly <em>did</em> think she had something better to do.</p>
+
+    <img src="paul cutie.jpg" width="125" height="125" alt="Molly Image">
+
+    <p>Submitted by:</p>
+    <p><b>Raymond Paul Geneza - BSIT 1H</b></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US ↔ Europe Shoe Size Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('shoe.AVIF');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            width: 100%;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #006b93;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e1ffe1;
+            border-left: 5px solid #09a309;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>US ↔ Europe Shoe Size Converter</h2>
+
+    <label>Select Gender:</label>
+    <select id="gender">
+        <option value="men">Men's Shoes</option>
+        <option value="women">Women's Shoes</option>
+    </select>
+
+    <label>Enter US Shoe Size:</label>
+    <input type="number" id="usSize" placeholder="Enter US size" />
+
+    <button onclick="convertShoeSize()">Convert</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function convertShoeSize() {
+    const gender = document.getElementById('gender').value;
+    const usSize = parseFloat(document.getElementById('usSize').value);
+    let result = '';
+    let europeSize = '';
+
+    if (isNaN(usSize) || usSize <= 0) {
+        alert("Please enter a valid shoe size.");
+        return;
+    }
+
+    // Shoe Size Conversion Logic
+    if (gender === 'men') {
+        // US to Europe Men's Shoe Sizes
+        if (usSize >= 6 && usSize <= 12) {
+            europeSize = usSize + 33; // US 6 = EU 39, US 7 = EU 40, etc.
+        } else {
+            europeSize = "Size not available in the range (6-12)";
+        }
+        result = `US Men's Shoe Size ${usSize} is equivalent to Europe Men's Shoe Size ${europeSize}.`;
+    } else if (gender === 'women') {
+        // US to Europe Women's Shoe Sizes
+        if (usSize >= 5 && usSize <= 12) {
+            europeSize = usSize + 33; // US 5 = EU 38, US 6 = EU 39, etc.
+        } else {
+            europeSize = "Size not available in the range (5-12)";
+        }
+        result = `US Women's Shoe Size ${usSize} is equivalent to Europe Women's Shoe Size ${europeSize}.`;
+    }
+
+    document.getElementById('result').style.display = "block";
+    document.getElementById('result').innerHTML = result;
+}
+</script>
+
+</body>
+</html>

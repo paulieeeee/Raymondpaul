@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KARE-KARE RECIPE</title>
+<style>
+    /* Body and background */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('sarap.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Overlay to make text readable */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        z-index: -1;
+    }
+
+    /* Container */
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.7);
+        backdrop-filter: blur(8px);
+    }
+
+    /* Headings */
+    h1 {
+        font-family: 'Lucida Handwriting', cursive;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffcc66;
+        text-shadow: 2px 2px 8px #000;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #ff9966;
+        text-shadow: 1px 1px 5px #000;
+    }
+
+    /* Lists */
+    ul, ol {
+        background-color: rgba(0,0,0,0.3);
+        padding: 20px;
+        border-radius: 10px;
+        list-style-position: inside;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    /* Buttons (if needed for back or download) */
+    .btn {
+        display: inline-block;
+        background-color: #ff6f61;
+        color: #fff;
+        padding: 12px 25px;
+        margin-top: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #ff856f;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(255,111,97,0.5);
+    }
+
+    /* Animations */
+    h1, h2, ul, ol {
+        opacity: 0;
+        animation: fadeIn 1.2s forwards;
+    }
+
+    h1 { animation-delay: 0.2s; }
+    h2 { animation-delay: 0.4s; }
+    ul { animation-delay: 0.6s; }
+    ol { animation-delay: 0.8s; }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive */
+    @media(max-width: 600px){
+        .container { padding: 20px; }
+        h1 { font-size: 36px; }
+        h2 { font-size: 22px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>KARE-KARE</h1>
+
+    <h2>Ingredients:</h2>
+    <ul>
+        <li>3 lbs oxtail cut in 2 inch slices (you can also use tripe or beef slices)</li>
+        <li>1 piece small banana flower bud, sliced</li>
+        <li>1 bundle pechay or bok choy</li>
+        <li>1 bundle string beans, cut into 2 inch slices</li>
+        <li>4 pieces eggplants, sliced</li>
+        <li>1 cup ground peanuts</li>
+        <li>1/2 cup peanut butter</li>
+        <li>1/2 cup shrimp paste (bagoong alamang)</li>
+        <li>34 ounces water (about 1 liter)</li>
+        <li>Cooking oil</li>
+        <li>1/2 cup annatto seeds soaked in a cup of water</li>
+        <li>1/2 cup toasted ground rice</li>
+        <li>1 tbsp garlic, minced</li>
+        <li>1 piece onion, chopped</li>
+        <li>Salt and pepper</li>
+    </ul>
+
+    <h2>Instructions:</h2>
+    <ol>
+        <li>In a large pot, bring the water to a boil.</li>
+        <li>Put in the oxtail followed by the onions and simmer for 2.5 to 3 hrs or until tender (35 minutes if using a pressure cooker).</li>
+        <li>Once the meat is tender, add the ground peanuts, peanut butter, and coloring (water from the annatto seed mixture) and simmer for 5 to 7 minutes.</li>
+        <li>Add the toasted ground rice and simmer for 5 minutes.</li>
+        <li>On a separate pan, sauté the garlic then add the banana flower, eggplant, and string beans and cook for 5 minutes.</li>
+        <li>Transfer the cooked vegetables to the large pot (where the rest of the ingredients are).</li>
+        <li>Add salt and pepper to taste.</li>
+        <li>Serve hot with shrimp paste. Enjoy!</li>
+    </ol>
+
+</div>
+
+</body>
+</html>
